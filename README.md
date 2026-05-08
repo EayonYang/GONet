@@ -30,7 +30,7 @@ To find the optimal hyperparameters for a specific cancer dataset, we utilize Op
 
 ```python
 python3 main_optuna_model.py
-
+\```
 
 The search space and number of trials can be adjusted within main_optuna_model.py.
 
@@ -43,13 +43,13 @@ Specify the target cancer type using the --cancer_type argument:
 
 ```python
 python3 main_train.py --cancer_type HTML_THCA
-
+\```
 
 Option B: Batch/Shell usage
 Use the shell script to execute training with predefined environment settings (recommended for server-side execution):
 
 ```Bash 
 run_train_new.sh HTML_THCA
-
+\```
 
 The model outputs performance metrics including AUC-ROC, F1-score, and Accuracy.
