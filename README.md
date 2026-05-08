@@ -4,9 +4,13 @@ GONet establishes a robust and generalizable graph representation learning for i
 
 # Requirements
 Python >= 3.8
+
 PyTorch >= 2.0
+
 PyTorch Geometric >= 2.4.0
+
 Scikit-learn, Pandas, Numpy, Matplotlib
+
 
 # Installation
 git clone https://github.com/yourusername/GONet.git
