@@ -27,20 +27,23 @@ All model parameters and experiment settings are managed in args.py. Before runn
 ### 2. Hyperparameter Optimization (Optional)
 To find the optimal hyperparameters for a specific cancer dataset, we utilize Optuna. This step is recommended for achieving peak performance on new data.
 
-'''python3 main_optuna_model.py'''
+'''python
+python3 main_optuna_model.py
+
 The search space and number of trials can be adjusted within main_optuna_model.py.
 
-### 3. Model Training
+### 3. Model usage
 You can train GONet using either the Python script or the provided shell script for batch processing.
 
-Option A: Direct Training
+Option A: Direct usage
 Specify the target cancer type using the --cancer_type argument:
+'''python
+python3 main_train.py --cancer_type HTML_THCA
 
-'''python3 main_train.py --cancer_type HTML_THCA'''
-
-Option B: Batch/Shell Training
+Option B: Batch/Shell usage
 Use the shell script to execute training with predefined environment settings (recommended for server-side execution):
 
-'''sh run_train_new.sh HTML_THCA'''
+'''Bash 
+run_train_new.sh HTML_THCA
 
 The model outputs performance metrics including AUC-ROC, F1-score, and Accuracy.
