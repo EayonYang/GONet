@@ -13,10 +13,17 @@ Scikit-learn, Pandas, Numpy, Matplotlib
 
 
 # Installation
+
+```Bash
 git clone https://github.com/yourusername/GONet.git
+
 cd GONet
+
 conda env create -f environment.yml
-conda activate gonet
+
+conda activate GONet
+
+```
 
 # Data Input
 GONet expects input data in CSV format. Each omic layer should be a matrix of (samples × features).
