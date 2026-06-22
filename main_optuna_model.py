@@ -1,7 +1,3 @@
-
-
-
-
 import os
 import torch
 import gc
@@ -49,7 +45,7 @@ class get_args:
 
         ## 2,model training
         self.num_epoches = param_list['num_epoches']
-        self.batch_size = 10
+        self.batch_size = 10 # OOM 
         self.weight_decay = param_list['weight_decay']
         self.lr = param_list['lr']
         self.cls_w = param_list['cls_w']
@@ -111,9 +107,9 @@ def objective(trial):
         'fusion':trial.suggest_categorical('fusion', ['all']),
         'num_epoches':trial.suggest_int('num_epoches', 50, 500, log=True),
 
-        'cls_w':trial.suggest_float('cls_w', 2, 5, log=True),
-        'ae_w':trial.suggest_float('ae_w', 1, 3, log=True),
-        'gnn_w':trial.suggest_float('gnn_w', 1, 3, log=True),
+        'cls_w':trial.suggest_float('cls_w', 1, 5, log=True),
+        'ae_w':trial.suggest_float('ae_w', 1, 5, log=True),
+        'gnn_w':trial.suggest_float('gnn_w', 1, 5, log=True),
         'cont_w':trial.suggest_float('cont_w', 0.01, 1, log=True),
                     }
     gc.collect()
@@ -133,9 +129,7 @@ def objective(trial):
 
 def save_study_callback(study, trail):
     df = study.trials_dataframe() #将所有试验结果转化为DF形式
-    df.to_csv(f'./optuna_results/att_optuna_{cancer_type}_mRNA_miRNA_study_results.csv', index=False)
-
-
+    df.to_csv(f'./optuna_results/att_optuna_{cancer_type}_study_results.csv', index=False)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
