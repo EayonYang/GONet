@@ -32,7 +32,7 @@ We provide a processed data in the data/ directory, and place your raw data in s
 # Usage
 GONet provides a streamlined pipeline from hyperparameter optimization to final model training.
 ### 1. Configuration
-All model parameters and experiment settings are managed in args.py. Before running, ensure you have configured the paths and basic settings (e.g., learning rate, weight decay, or GNN layers) in this file.
+All model parameters and experiment settings are managed in args.py. Before running, ensure you have configured the paths and basic settings (e.g., learning rate, ae layers, or GNN layers) in this file.
 
 
 ### 2. Hyperparameter Optimization (Optional)
